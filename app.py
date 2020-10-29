@@ -60,7 +60,7 @@ def main():
     texture = st.sidebar.slider('Texture Worst', 10.0, 50.0, 20.0)
     radius_worst = st.sidebar.slider('Radius Worst', 5.0, 40.0, 10.0)
     st.write('')
-    st.sidebar.info(" This App is maitained by Manoj Aryal mailto:me@manoj-aryal.com")
+    st.sidebar.info(" This App is maintained by Manoj Aryal mailto:me@manoj-aryal.com")
 
     # <---main-page-->
     st.success('**::: Breast Cancer Predictor :::**')

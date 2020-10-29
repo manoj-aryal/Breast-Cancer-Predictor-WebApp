@@ -108,6 +108,7 @@ def main():
     fig_cm = plt.figure(figsize=(10,5)) 
     sns.heatmap(cm,annot=True,fmt="d")
     st.pyplot(fig_cm)
+    plt.close()
     
     st.title('Data Visualization:')
     
@@ -115,6 +116,7 @@ def main():
     fig_hm = plt.figure(figsize=(20,10)) 
     sns.heatmap(df.corr(), annot=True, fmt='.0%')
     st.pyplot(fig_hm)
+    plt.close()
 
     st.subheader("Swarm Plot")
     sns.set(style="whitegrid", palette="muted")
@@ -128,6 +130,7 @@ def main():
     
     plt.xticks(rotation=90)
     st.pyplot(fig_sp)
+    plt.close()
 
     st.subheader("Strip Plot")
     sns.set(style="whitegrid", palette="muted")
@@ -141,6 +144,7 @@ def main():
     sns.stripplot(x="features", y="value", hue="diagnosis", data=data)
     plt.xticks(rotation=90)
     st.pyplot(fig_spp)
+    plt.close()
 
 
 main()

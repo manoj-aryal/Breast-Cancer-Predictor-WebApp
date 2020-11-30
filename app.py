@@ -38,6 +38,10 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 
+'''
+Had to put different components in single function because of Streamlit issue after deploying the app
+'''
+
 def main():
     df = load_data()
 

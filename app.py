@@ -23,29 +23,31 @@ def load_data():
     df.drop("id",axis=1,inplace=True)
     labelencoder_Y = LabelEncoder()
     df.iloc[:,0]= labelencoder_Y.fit_transform(df.iloc[:,0].values)
-    
+
     return df
 
 
 @st.cache(ttl=86400, allow_output_mutation=True)
 def get_model(model):  
     if model == "Logistic Regression":
-        return LogisticRegression(random_state = 25)
+        model =  LogisticRegression(random_state = 25)
 
     if model == "Random Forest Classifier":
-        return RandomForestClassifier(random_state=25) 
+        model =  RandomForestClassifier(random_state=25) 
 
     if model == "K Nearest Neighbours":
-        return KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2) 
+        model = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2) 
 
     if model == "Support Vector Machines":
-        return SVC(kernel = 'linear', random_state = 25)
+        model = SVC(kernel = 'linear', random_state = 25)
 
     if model == "Decision Tree Classifier":
-        return DecisionTreeClassifier(criterion = 'entropy', random_state = 25)
+        model = DecisionTreeClassifier(criterion = 'entropy', random_state = 25)
 
     if model == "Naive Bayes":
-        return GaussianNB() 
+        model = GaussianNB() 
+
+    return model
 
 
 @st.cache(ttl=86400, allow_output_mutation=True)
